@@ -29,9 +29,7 @@ TEST(test_merge_sort_list_ascending) {
     IntList list = list_obtain();
     if (list != 0) {
         init_list_random(list, 16);
-    print_list("\nmerge sort init  ", list);
         merge_sort_list(list, &is_in_asc_order);
-    print_list("merge sort sorted", list);
         int i = 1;
         for (; i < list_get_size(list) && list_get_at(list, i-1) <= list_get_at(list, i); i++);
         ASSERT_TRUE(i == list_get_size(list), MSG("Expected that all elements are in ascending order"));
